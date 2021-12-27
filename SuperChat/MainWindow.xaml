@@ -126,10 +126,10 @@
                     <ColumnDefinition Width="90"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Height="50"
-                           Text="Message @Username"
-                           Style="{StaticResource MessageBox}"
-                           Grid.ColumnSpan="2"/>
+                <TextBox Height="50"
+                         Text="Message @Username"
+                         Style="{StaticResource MessageBox}"
+                         Grid.ColumnSpan="2"/>
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
