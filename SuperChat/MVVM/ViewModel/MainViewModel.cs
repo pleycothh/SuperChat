@@ -1,4 +1,5 @@
-﻿using SuperChat.MVVM.Model;
+﻿using SuperChat.Core;
+using SuperChat.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,10 +9,31 @@ using System.Threading.Tasks;
 
 namespace SuperChat.MVVM.ViewModel
 {
-    internal class MainViewModel
+    internal class MainViewModel: ObservableObject 
     {
         public ObservableCollection<MessageModel> Messages { get; set; }
         public ObservableCollection<ContactModel> Contacts { get; set; }
+
+
+        /* Commands */
+
+        public ContactModel SelectedContact { get; set; }
+
+        // check video on property changed:
+
+        private string _message;
+        public string Message { 
+            get 
+            { 
+                return _message; 
+            } 
+            set 
+            {
+                _message = value;
+                OnpropertyChanged();
+            } 
+        }
+
 
 
         public MainViewModel()
