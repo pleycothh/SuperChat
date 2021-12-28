@@ -17,7 +17,23 @@ namespace SuperChat.MVVM.ViewModel
 
         /* Commands */
         public RelayCommand SendCommand { get; set; }
-        public ContactModel SelectedContact { get; set; }
+
+        //public ContactModel SelectedContact { get; set; }
+        private ContactModel _selectedContact;
+
+        public ContactModel SelectedContact
+        {
+            get { return _selectedContact; }
+            set 
+            { 
+                _selectedContact = value;
+                OnpropertyChanged();
+            }
+        }
+
+
+
+
 
         // check video on property changed:
 
