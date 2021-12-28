@@ -16,7 +16,7 @@ namespace SuperChat.MVVM.ViewModel
 
 
         /* Commands */
-
+        public RelayCommand SendCommand { get; set; }
         public ContactModel SelectedContact { get; set; }
 
         // check video on property changed:
@@ -41,6 +41,15 @@ namespace SuperChat.MVVM.ViewModel
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
 
+            SendCommand = new RelayCommand(o =>
+            {
+                Messages.Add(new MessageModel{
+                    Message = Message,
+                    FirstMessage = false
+                });
+
+                Message = "";
+            });
 
             Messages.Add(new MessageModel
             {
